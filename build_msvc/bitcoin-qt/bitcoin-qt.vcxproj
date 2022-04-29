@@ -49,7 +49,6 @@
       <Project>{5724ba7d-a09a-4ba8-800b-c4c1561b3d69}</Project>
     </ProjectReference>
   </ItemGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(QtIncludes);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -57,14 +56,13 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalDependencies>$(QtReleaseLibraries);%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalOptions>/ignore:4206 /LTCG:OFF</AdditionalOptions>
+      <AdditionalOptions>/ignore:4206 /LTCG:OFF /FORCE:MULTIPLE</AdditionalOptions>
     </Link>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\..\src;</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_CONFIG_H;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(QtIncludes);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -78,7 +76,6 @@
       <PreprocessorDefinitions>HAVE_CONFIG_H;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
-
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>

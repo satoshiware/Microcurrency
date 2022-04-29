@@ -492,6 +492,8 @@ fs::path static StartupShortcutPath()
         return GetSpecialFolderPath(CSIDL_STARTUP) / "Bitcoin.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
         return GetSpecialFolderPath(CSIDL_STARTUP) / "Bitcoin (testnet).lnk";
+    if (chain == CBaseChainParams::AZCOIN)
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Bitcoin (azcoin).lnk";
     return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Bitcoin (%s).lnk", chain);
 }
 

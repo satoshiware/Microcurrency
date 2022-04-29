@@ -94,13 +94,18 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
             if (GUIUtil::parseBitcoinURI(arg, &r) && !r.address.isEmpty())
             {
                 auto tempChainParams = CreateChainParams(gArgs, CBaseChainParams::MAIN);
-
+                
                 if (IsValidDestinationString(r.address.toStdString(), *tempChainParams)) {
                     SelectParams(CBaseChainParams::MAIN);
-                } else {
+                } else{
                     tempChainParams = CreateChainParams(gArgs, CBaseChainParams::TESTNET);
                     if (IsValidDestinationString(r.address.toStdString(), *tempChainParams)) {
                         SelectParams(CBaseChainParams::TESTNET);
+                    } else {
+                        tempChainParams = CreateChainParams(gArgs, CBaseChainParams::AZCOIN);
+                        if (IsValidDestinationString(r.address.toStdString(), *tempChainParams)) {
+                            SelectParams(CBaseChainParams::AZCOIN);
+                        }
                     }
                 }
             }
