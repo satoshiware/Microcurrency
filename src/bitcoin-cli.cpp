@@ -404,6 +404,7 @@ private:
         if (gArgs.GetChainName() == CBaseChainParams::TESTNET) return " testnet";
         if (gArgs.GetChainName() == CBaseChainParams::SIGNET) return " signet";
         if (gArgs.GetChainName() == CBaseChainParams::REGTEST) return " regtest";
+    //    if (gArgs.GetChainName() == CBaseChainParams::MICROS) return " micros";
         return "";
     }
     std::string PingTimeToString(double seconds) const

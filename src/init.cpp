@@ -359,10 +359,12 @@ void SetupServerArgs(ArgsManager& argsman)
     const auto testnetBaseParams = CreateBaseChainParams(CBaseChainParams::TESTNET);
     const auto signetBaseParams = CreateBaseChainParams(CBaseChainParams::SIGNET);
     const auto regtestBaseParams = CreateBaseChainParams(CBaseChainParams::REGTEST);
+  //  const auto microsBaseParams = CreateBaseChainParams(CBaseChainParams::MICROS);
     const auto defaultChainParams = CreateChainParams(argsman, CBaseChainParams::MAIN);
     const auto testnetChainParams = CreateChainParams(argsman, CBaseChainParams::TESTNET);
     const auto signetChainParams = CreateChainParams(argsman, CBaseChainParams::SIGNET);
     const auto regtestChainParams = CreateChainParams(argsman, CBaseChainParams::REGTEST);
+  //  const auto microsChainParams = CreateChainParams(argsman, CBaseChainParams::MICROS);
 
     // Hidden Options
     std::vector<std::string> hidden_args = {
